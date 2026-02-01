@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Important Question 👀</title>
+  <title>System Check 👀</title>
   <style>
     body {
-      background: #fff0f5;
+      background: #0f172a;
+      color: #e5e7eb;
+      font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 80px;
-      font-family: Arial, sans-serif;
+    }
+    .card {
+      background: #111827;
+      padding: 30px;
+      border-radius: 12px;
+      width: 85%;
+      max-width: 420px;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
     button {
-      padding: 15px 30px;
-      font-size: 18px;
+      padding: 14px 28px;
+      font-size: 17px;
       margin: 10px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
-    #no {
+    .yes {
+      background: #ec4899;
+      color: white;
+    }
+    .no {
+      background: #374151;
+      color: white;
       position: absolute;
     }
   </style>
@@ -23,28 +41,31 @@
 
 <body>
 
-  <h1>Hey you 👀</h1>
-  <p>I had two options:</p>
-  <p>1. Ask you normally 😌<br>2. Make a whole website 😎</p>
-  <p>I clearly chose option 2.</p>
+  <div class="card" id="card">
+    <h2>Running Compatibility Check…</h2>
+    <p>• Smile detected 😌</p>
+    <p>• Cute habits confirmed 🥰</p>
+    <p>• Makes my days better ✔️</p>
+    <p><strong>Status:</strong> Highly Compatible</p>
 
-  <h2>So… will you be my Valentine? 💖</h2>
+    <h3>Proceed with Valentine Request?</h3>
 
-  <button onclick="yes()">YES 💘</button>
-  <button id="no" onmouseover="moveNo()">No 🙄</button>
+    <button class="yes" onclick="yes()">YES 💖</button>
+    <button class="no" id="no" onmouseover="moveNo()">No 😐</button>
+  </div>
 
   <script>
     function moveNo() {
       const btn = document.getElementById("no");
-      btn.style.left = Math.random() * 300 + "px";
-      btn.style.top = Math.random() * 300 + "px";
+      btn.style.left = Math.random() * 250 + "px";
+      btn.style.top = Math.random() * 250 + "px";
     }
 
     function yes() {
-      document.body.innerHTML =
-        "<h1>Correct answer 🥰</h1>" +
-        "<p>You just made me smile like an idiot.</p>" +
-        "<p>Dinner is on me ❤️</p>";
+      document.getElementById("card").innerHTML =
+        "<h1>Request Approved 🥰</h1>" +
+        "<p>You are officially my Valentine.</p>" +
+        "<p>Dinner. Dessert. You. ❤️</p>";
     }
   </script>
 
